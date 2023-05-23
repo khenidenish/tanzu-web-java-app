@@ -2,7 +2,7 @@ SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dev.local/tanzu-web-java-app-s
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
 OUTPUT_TO_NULL_COMMAND = os.getenv("OUTPUT_TO_NULL_COMMAND", default=' > /dev/null ')
-allow_k8s_contexts('arn:aws:eks:ap-east-1:549942532493:cluster/tap-test-k8s')
+allow_k8s_contexts('arn:aws:eks:ap-southeast-1:549942532493:cluster/tap-test')
 k8s_custom_deploy(
     'tanzu-web-java-app',
     apply_cmd="tanzu apps workload apply -f config/workload.yaml --update-strategy replace --debug --live-update" +
